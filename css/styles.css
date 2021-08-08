@@ -24,7 +24,7 @@ ul {
    list-style-type: none;
 }
 
-section {
+.section {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -55,7 +55,7 @@ input[type='number']::-webkit-outer-spin-button {
    margin: 0;
 }
 
-main {
+.main {
    background-color: #fff;
    padding: 20px;
    border-radius: 20px;
@@ -240,7 +240,7 @@ main {
 }
 
 @media (max-width: 768px) {
-   main {
+   .main {
       flex-direction: column;
       margin-bottom: 30px;
       padding: 20px 0;
