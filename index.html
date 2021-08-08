@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- displays site properly based on user's device -->
+
+      <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+      <title>Frontend Mentor | Tip calculator app</title>
+
+      <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+      <style>
+         .attribution {
+            font-size: 11px;
+            text-align: center;
+         }
+         .attribution a {
+            color: hsl(228, 45%, 44%);
+         }
+      </style>
+      <link
+         href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+         rel="stylesheet"
+      />
+      <link
+         rel="stylesheet"
+         href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      />
+      <link rel="stylesheet" href="./css/styles.css" />
+   </head>
+   <body>
+      <!-- Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount / person -->
+      <!-- Total / person Reset -->
+      <section>
+         <header>
+            <span>SPLI</span><br />
+            <span>TTER</span>
+         </header>
+         <main>
+            <div class="tipcalc-options">
+               <div class="item-1">
+                  <span>Bill</span><br />
+                  <div class="input-control">
+                     <i class="fas fa-dollar-sign"></i>
+                     <input
+                        type="number"
+                        placeholder="0"
+                        oninput="(value == '' || value == '0') ? value = '' : value < 0 ? value = value * -1 : false"
+                        min="0"
+                        dir="rtl"
+                        id="bill"
+                     />
+                  </div>
+               </div>
+               <div class="item-2">
+                  <span>Select Tip %</span>
+                  <ul>
+                     <li><button data-tip="5">5%</button></li>
+                     <li><button data-tip="10">10%</button></li>
+                     <li><button data-tip="15">15%</button></li>
+                     <li><button data-tip="20">20%</button></li>
+                     <li><button data-tip="25">25%</button></li>
+                     <li>
+                        <input
+                           min="0"
+                           type="number"
+                           dir="rtl"
+                           oninput="value == '' ? value = '' : value < 0 ? value = value * -1 : false"
+                           id="customTip"
+                           placeholder="Custom"
+                        />
+                     </li>
+                  </ul>
+               </div>
+               <div class="item-3">
+                  <span>Number of People</span>
+                  <div class="input-control">
+                     <i class="fas fa-user"></i>
+                     <input
+                        type="number"
+                        min="1"
+                        placeholder="1"
+                        oninput="(value == '' || value == '0') ? value = '' : value < 0 ? value = value * -1 : false"
+                        dir="rtl"
+                        id="people"
+                     />
+                  </div>
+               </div>
+            </div>
+            <div class="tipcalc-total">
+               <div class="tipcalc-total-details">
+                  <div class="item-1">
+                     <div class="left">
+                        <span>Tip Amount</span><br />
+                        <small>/ person</small>
+                     </div>
+                     <div class="right">
+                        <strong>&dollar;</strong><strong id="displayTip">4.27</strong>
+                     </div>
+                  </div>
+                  <div class="item-2">
+                     <div class="left">
+                        <span>Total</span><br />
+                        <small>/ person</small>
+                     </div>
+                     <div class="right">
+                        <strong>&dollar;</strong><strong id="displayTotal">100.27</strong>
+                     </div>
+                  </div>
+               </div>
+               <div class="reset-button">
+                  <button type="button" id="reset">Reset</button>
+               </div>
+            </div>
+         </main>
+      </section>
+
+      <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+      <script src="./js/app.js"></script>
+   </body>
+</html>

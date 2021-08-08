@@ -1,0 +1,268 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Space Mono', sans-serif;
+}
+
+:root {
+   --primary: hsl(172, 67%, 45%);
+   --very-dark-cyan: hsl(183, 100%, 15%);
+   /* --dark-grayish-cyan: hsl(184, 14%, 56%); */
+   --dark-grayish-cyan: hsl(186, 14%, 43%);
+   --light-grayish-cyan: hsl(185, 41%, 84%);
+   /* --light-grayish-cyan: hsl(189, 41%, 97%); */
+   --white: hsl(0, 0%, 100%);
+   --font: 'Space Mono', sans-serif;
+}
+
+html {
+   background-color: var(--light-grayish-cyan);
+}
+
+ul {
+   list-style-type: none;
+}
+
+section {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+header {
+   margin: 80px 0 40px;
+}
+
+header span {
+   color: var(--very-dark-cyan);
+   font-weight: 700;
+   letter-spacing: 4px;
+   font-size: 16px;
+}
+
+input[type='number'] {
+   caret-color: transparent;
+   color: var(--very-dark-cyan);
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   margin: 0;
+}
+
+main {
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 20px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   display: flex;
+}
+
+.tipcalc-options,
+.tipcalc-total {
+   flex: 1;
+   margin: 0 20px;
+}
+
+.tipcalc-options > div {
+   margin-bottom: 30px;
+}
+
+.tipcalc-options > div:last-child {
+   margin-bottom: 0;
+}
+
+.tipcalc-options span {
+   font-size: 13px;
+   color: var(--dark-grayish-cyan);
+   font-weight: 700;
+   display: inline-block;
+   margin-bottom: 4px;
+}
+
+.tipcalc-options .item-1 input,
+.tipcalc-options .item-3 input {
+   width: 100%;
+   font-size: 24px;
+   outline: none;
+   background-color: var(--light-grayish-cyan);
+   border-radius: 5px;
+   padding: 5px 8px;
+   font-family: var(--font);
+   font-weight: 600;
+   cursor: pointer;
+   border: 2px solid var(--light-grayish-cyan);
+}
+
+.input-control {
+   position: relative;
+}
+
+.tipcalc-options .item-3 i,
+.tipcalc-options .item-1 i {
+   position: absolute;
+   top: 22%;
+   padding: 5px 10px;
+   color: hsl(184, 14%, 56%);
+}
+
+.tipcalc-options .item-1 input:focus,
+.tipcalc-options .item-3 input:focus {
+   border: 2px solid var(--primary);
+   background-color: #fff;
+}
+
+.tipcalc-options .item-2 span,
+.tipcalc-options .item-3 span {
+   margin-bottom: 10px;
+}
+
+.tipcalc-options .item-2 ul {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 10px;
+   text-align: center;
+}
+
+.tipcalc-options .item-2 ul li button,
+.tipcalc-options .item-2 ul li input {
+   font-size: 20px;
+   font-weight: 800;
+   width: 100px;
+   padding: 7px 8px;
+   outline: none;
+   border: none;
+   border-radius: 5px;
+   background-color: var(--very-dark-cyan);
+   color: var(--light-grayish-cyan);
+   cursor: pointer;
+}
+
+.active-button {
+   background-color: var(--primary) !important;
+}
+
+.tipcalc-options .item-2 ul li button:hover {
+   background-color: var(--primary);
+   color: var(--very-dark-cyan);
+}
+
+.tipcalc-options .item-2 ul li input {
+   color: var(--very-dark-cyan);
+   background-color: var(--light-grayish-cyan);
+   border: 2px solid var(--light-grayish-cyan);
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+.tipcalc-options .item-2 ul li input::placeholder {
+   text-align: center;
+}
+
+.tipcalc-options .item-2 ul li input:focus {
+   color: var(--very-dark-cyan);
+   background-color: #fff;
+   border: 2px solid var(--primary);
+}
+
+.tipcalc-options .item-3 span {
+   margin-left: 5px;
+}
+
+.tipcalc-total {
+   background-color: var(--very-dark-cyan);
+   color: white;
+   border-radius: 15px;
+   padding: 0 30px;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+}
+
+.tipcalc-total-details {
+   margin-top: 40px;
+}
+
+.tipcalc-total-details > div {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+   gap: 70px;
+}
+
+.tipcalc-total-details .left {
+   flex: 1;
+}
+
+.tipcalc-total-details .right {
+   flex: 1;
+}
+
+.tipcalc-total-details span {
+   font-size: 16px;
+}
+
+.tipcalc-total-details small {
+   color: var(--primary);
+}
+
+.tipcalc-total-details strong {
+   font-size: 35px;
+   color: var(--primary);
+}
+
+.reset-button {
+   margin-bottom: 30px;
+}
+
+.reset-button button {
+   text-transform: uppercase;
+   width: 100%;
+   font-size: 22px;
+   padding: 6px;
+   border-radius: 8px;
+   outline: none;
+   border: none;
+   background-color: var(--primary);
+   font-family: var(--font);
+   font-weight: 700;
+   color: var(--very-dark-cyan);
+   cursor: pointer;
+}
+
+.reset-button button:hover {
+   background-color: var(--light-grayish-cyan);
+}
+
+@media (max-width: 768px) {
+   main {
+      flex-direction: column;
+      margin-bottom: 30px;
+      padding: 20px 0;
+   }
+
+   .tipcalc-options {
+      margin-bottom: 30px;
+   }
+
+   .tipcalc-total-details strong {
+      font-size: 25px;
+   }
+}
+
+@media (max-width: 370px) {
+   .tipcalc-options,
+   .tipcalc-total {
+      flex: 1;
+      padding: 10px;
+   }
+
+   .tipcalc-options .item-2 ul {
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
